@@ -86,3 +86,7 @@ i {
   position: relative;
   left: 40px;
 }
+.gitHub-link {
+  display: block;
+  text-align: center;
+}
