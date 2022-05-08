@@ -89,4 +89,7 @@ i {
 .gitHub-link {
   display: block;
   text-align: center;
+  font-size: 12px;
+  font-family: "Courier New", Courier, monospace;
+  opacity: 0.2;
 }
