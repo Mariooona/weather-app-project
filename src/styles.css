@@ -71,6 +71,25 @@ li::first-letter {
   margin-top: 10px;
   left: 200px;
 }
+.weather-temperature .units {
+  position: relative;
+  font-size: 15px;
+  top: -30px;
+  font-weight: 600;
+}
+
+.weather-temperature .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
+.weather-temperature .degreesNight {
+  display: inline-block;
+  margin: 0px 10px auto;
+}
+
 i {
   color: #155967;
 }

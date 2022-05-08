@@ -44,14 +44,14 @@ function ShowCity(event) {
 function showTemperature(response) {
   console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#DayTemperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
-  document.querySelector("#NightTemperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
-  document.querySelector("#weather-description").innerHTML =
-    response.data.weather[0].description;
+  let DayTemperature = document.querySelector("#DayTemperature");
+  let NightTemperature = document.querySelector("#NightTemperature");
+
+  DayCelciusTemperature = response.data.main.temp_max;
+  NightCelciusTemperature = response.data.main.temp_min;
+
+  DayTemperature.innerHTML = Math.round(DayCelciusTemperature);
+  NightTemperature.innerHTML = Math.round(NightCelciusTemperature);
   document.querySelector("#Humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
@@ -88,42 +88,54 @@ CurentButton.addEventListener("click", getCurrentPosition);
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", ShowCity);
 
-searchCity("Vilnius");
-
 ///
 function convertToFarenheitDay(event) {
   event.preventDefault();
-  let DayTemperature = document.querySelector("#DayTemperature");
-  let NewDayTemperature = DayTemperature.innerHTML;
-  NewDayTemperature = Number(NewDayTemperature);
-  DayTemperature.innerHTML = Math.round((NewDayTemperature * 9) / 5 + 32);
+  let NewFarenheitDayTemperature = document.querySelector("#DayTemperature");
+  CelciusLinkDay.classList.remove("active");
+  FahrenheitLinkDay.add("active");
+  let fahrenheitDayTemperature = (DayCelciusTemperature * 9) / 5 + 32;
+  NewFarenheitDayTemperature.innerHTML = Math.round(fahrenheitDayTemperature);
 }
 function convertToFarenheitNight(event) {
-  let NightTemperature = document.querySelector("#NightTemperature");
-  let NewNightTemperature = NightTemperature.innerHTML;
-  NewNightTemperature = Number(NewNightTemperature);
-  NightTemperature.innerHTML = Math.round((NewNightTemperature * 9) / 5 + 32);
+  event.preventDefault();
+  let NewfarenheitNightTemperature =
+    document.querySelector("#NightTemperature");
+  CelciusLinkNight.classList.remove("active");
+  FahrenheitLinkNight.add("active");
+  let fahrenheitNightTemperature = (NightCelciusTemperature * 9) / 5 + 32;
+  NewFahrenheitNightTemperature.innerHTML = Math.round(
+    fahrenheitNightTemperature
+  );
 }
 
 function convertToCelciusDay(event) {
   event.preventDefault();
-  let DayTemperature = document.querySelector("#DayTemperature");
-  DayTemperature.innerHTML = 7;
+  let NewCelciusDayTemperature = document.querySelector("#DayTemperature");
+  CelciusLinkDay.classList.add("active");
+  temperatureFarenheitDay.remove("active");
+  NewCelciusDayTemperature.innerHTML = Math.round(DayCelciusTemperature);
 }
 
 function convertToCelciusNight(event) {
   event.preventDefault();
-  let NightTemperature = document.querySelector("#NightTemperature");
-  NightTemperature.innerHTML = 1;
+  let NewCelciusNightTemperature = document.querySelector("#NightTemperature");
+  CelciusLinkNight.classList.add("active");
+  temperatureFarenheitNight.remove("active");
+  NewCelciusNightTemperature.innerHTML = Math.round(NightCelciusTemperature);
 }
 
-let temperatureFarenheitDay = document.querySelector("#fahrenheit-link");
-temperatureFarenheitDay.addEventListener("click", convertToFarenheitDay);
+let DayCelciusTemperature = null;
+let NightCelciusTemperature = null;
 
-let temperatureFarenheitNight = document.querySelector("#fahrenheit-link");
-temperatureFarenheitNight.addEventListener("click", convertToFarenheitNight);
+let FahrenheitLinkDay = document.querySelector("#fahrenheit-link");
+FahrenheitLinkDay.addEventListener("click", convertToFarenheitDay);
 
-let temperatureCelciusDay = document.querySelector("#celcius-link");
-temperatureCelciusDay.addEventListener("click", convertToCelciusDay);
-let temperatureCelciusNight = document.querySelector("#celcius-link");
-temperatureCelciusNight.addEventListener("click", convertToCelciusNight);
+let FahrenheitLinkNight = document.querySelector("#fahrenheit-link");
+FahrenheitLinkNight.addEventListener("click", convertToFarenheitNight);
+
+let CelciusLinkDay = document.querySelector("#celcius-link");
+CelciusLinkDay.addEventListener("click", convertToCelciusDay);
+let CelciusLinkNight = document.querySelector("#celcius-link");
+CelciusLinkNight.addEventListener("click", convertToCelciusNight);
+searchCity("Vilnius");
