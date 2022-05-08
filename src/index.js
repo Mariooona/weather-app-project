@@ -59,6 +59,12 @@ function showTemperature(response) {
   document.querySelector("#real-feel").innerHTML = Math.round(
     response.data.main.feels_like
   );
+  let weatherIcon = document.querySelector("#weather-icon");
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  weatherIcon.setAttribute("alt", response.data.weather[0].description);
 }
 
 function showPosition(position) {
