@@ -50,6 +50,8 @@ function showTemperature(response) {
   document.querySelector("#NightTemperature").innerHTML = Math.round(
     response.data.main.temp
   );
+  document.querySelector("#weather-description").innerHTML =
+    response.data.weather[0].description;
   document.querySelector("#Humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
