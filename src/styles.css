@@ -39,20 +39,7 @@ li::first-letter {
   border: #155967 solid 1px;
   border-radius: 20px;
 }
-.degreesDay {
-  color: black;
-  font-weight: 500;
-  font-size: 60px;
-  line-height: 2;
-  position: relative;
-  left: 10px;
-}
-.degreesNight {
-  color: black;
-  font-weight: 500;
-  font-size: 27px;
-  opacity: 0.3;
-}
+
 .Sun-icon {
   height: 70px;
   width: 70px;
@@ -70,6 +57,24 @@ li::first-letter {
   margin-bottom: 20px;
   margin-top: 10px;
   left: 200px;
+}
+.weather-temperature {
+  display: block;
+  left: -10px;
+}
+.weather-temperature strong {
+  color: rgb(33, 33, 33);
+  font-size: 50px;
+  line-height: 3;
+  font-weight: 600;
+}
+.weather-temperature small {
+  color: rgb(33, 33, 33);
+  font-size: 30px;
+  line-height: 3;
+  font-weight: 600;
+  opacity: 0.3;
+  left: -10px;
 }
 .weather-temperature .units {
   position: relative;
@@ -117,4 +122,6 @@ i {
   font-size: 12px;
   font-family: "Courier New", Courier, monospace;
   opacity: 0.9;
+  max-width: 500px;
+  margin: 0 auto;
 }

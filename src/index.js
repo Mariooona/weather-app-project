@@ -89,50 +89,47 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", ShowCity);
 
 ///
-function convertToFarenheitDay(event) {
+function convertToFahrenheitDay(event) {
   event.preventDefault();
-  let NewFarenheitDayTemperature = document.querySelector("#DayTemperature");
+  let DayTemperatureElement = document.querySelector("#DayTemperature");
+  let DayFahrenheitTemperature = (DayCelciusTemperature * 9) / 5 + 32;
   CelciusLinkDay.classList.remove("active");
-  FahrenheitLinkDay.add("active");
-  let fahrenheitDayTemperature = (DayCelciusTemperature * 9) / 5 + 32;
-  NewFarenheitDayTemperature.innerHTML = Math.round(fahrenheitDayTemperature);
+  FahrenheitLinkDay.classList.add("active");
+  DayTemperatureElement.innerHTML = Math.round(DayFahrenheitTemperature);
 }
-function convertToFarenheitNight(event) {
+function convertToFahrenheitNight(event) {
   event.preventDefault();
-  let NewfarenheitNightTemperature =
-    document.querySelector("#NightTemperature");
+  let NightTemperatureElement = document.querySelector("#NightTemperature");
+  let NightFahrenheitTemperature = (NightCelciusTemperature * 9) / 5 + 32;
   CelciusLinkNight.classList.remove("active");
-  FahrenheitLinkNight.add("active");
-  let fahrenheitNightTemperature = (NightCelciusTemperature * 9) / 5 + 32;
-  NewFahrenheitNightTemperature.innerHTML = Math.round(
-    fahrenheitNightTemperature
-  );
+  FahrenheitLinkNight.classList.add("active");
+  NightTemperatureElement.innerHTML = Math.round(NightFahrenheitTemperature);
 }
 
 function convertToCelciusDay(event) {
   event.preventDefault();
-  let NewCelciusDayTemperature = document.querySelector("#DayTemperature");
+  let DayTemperatureElement = document.querySelector("#DayTemperature");
   CelciusLinkDay.classList.add("active");
-  temperatureFarenheitDay.remove("active");
-  NewCelciusDayTemperature.innerHTML = Math.round(DayCelciusTemperature);
+  FahrenheitLinkDay.classList.remove("active");
+  DayTemperatureElement.innerHTML = Math.round(DayCelciusTemperature);
 }
 
 function convertToCelciusNight(event) {
   event.preventDefault();
-  let NewCelciusNightTemperature = document.querySelector("#NightTemperature");
+  let NightTemperatureElement = document.querySelector("#NightTemperature");
   CelciusLinkNight.classList.add("active");
-  temperatureFarenheitNight.remove("active");
-  NewCelciusNightTemperature.innerHTML = Math.round(NightCelciusTemperature);
+  FahrenheitLinkNight.classList.remove("active");
+  NightTemperatureElement.innerHTML = Math.round(NightCelciusTemperature);
 }
 
 let DayCelciusTemperature = null;
 let NightCelciusTemperature = null;
 
 let FahrenheitLinkDay = document.querySelector("#fahrenheit-link");
-FahrenheitLinkDay.addEventListener("click", convertToFarenheitDay);
+FahrenheitLinkDay.addEventListener("click", convertToFahrenheitDay);
 
 let FahrenheitLinkNight = document.querySelector("#fahrenheit-link");
-FahrenheitLinkNight.addEventListener("click", convertToFarenheitNight);
+FahrenheitLinkNight.addEventListener("click", convertToFahrenheitNight);
 
 let CelciusLinkDay = document.querySelector("#celcius-link");
 CelciusLinkDay.addEventListener("click", convertToCelciusDay);
