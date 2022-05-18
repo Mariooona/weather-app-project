@@ -12,11 +12,15 @@ h1 {
 ul {
   margin: 0;
   padding: 0;
+  display: block;
 }
+ul .Other-properties {
+  position: fixed;
+}
+
 li {
   margin: 0;
   padding: 0;
-
   font-family: Arial, Helvetica, sans-serif;
   color: #79a2aa;
   font-size: 15px;
@@ -81,11 +85,13 @@ li::first-letter {
   font-size: 15px;
   top: -30px;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .weather-temperature .active {
   color: rgb(33, 33, 33);
   cursor: default;
+  text-decoration: none;
 }
 .weather-temperature .active:hover {
   text-decoration: none;
