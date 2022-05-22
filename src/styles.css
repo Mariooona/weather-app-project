@@ -104,24 +104,26 @@ li::first-letter {
 i {
   color: #155967;
 }
-.col-2 {
+.five-Days-forecast {
+  margin-top: 20px;
   font-weight: 800;
   display: block;
   text-align: center;
   font-size: 15px;
   line-height: 1;
-  top: 20px;
-}
-.DayTemperature {
   color: #155967;
 }
-.NightTemperature {
+.five-Days-forecast-date {
+  font-size: 18px;
+}
+.five-Days-forecast-temperatures {
+  font-size: 16px;
+}
+.Forecast-night-temperature-min {
   opacity: 0.5;
+  font-size: 14px;
 }
-.five-Days-forecast {
-  position: relative;
-  left: 40px;
-}
+
 .gitHub-link {
   display: block;
   text-align: center;
