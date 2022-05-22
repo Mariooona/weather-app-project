@@ -80,7 +80,7 @@ function displayForecast(response) {
               )}°</span> C
             </div>
           </div>
-        </div>
+        
 `;
     }
   });

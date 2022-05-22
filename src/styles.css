@@ -1,5 +1,19 @@
+body {
+  background-color: #d6e2e4;
+}
+
+.WeatherApp {
+  position: relative;
+  max-width: 600px;
+  padding: 12px;
+  margin: 10px auto;
+  background-color: #c9eefa;
+  border: #155967 solid 1px;
+  border-radius: 20px;
+}
 h1 {
   display: block;
+  text-align: left;
   font-weight: 700px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 100;
@@ -7,15 +21,24 @@ h1 {
   color: #155967;
   line-height: 26px;
   top: 20px;
-  margin: 0;
+  margin: 0 auto;
+  left: -20px;
 }
 ul {
   margin: 0;
   padding: 0;
   display: block;
+  left: -20px;
 }
 ul .Other-properties {
-  position: fixed;
+  display: block;
+  text-align: right;
+}
+.Other-properties .li {
+  padding: 0;
+  display: block;
+  text-align: right;
+  right: -20px;
 }
 
 li {
@@ -30,37 +53,29 @@ li {
   line-height: 5;
   left: 20px;
 }
-li::first-letter {
+li:first-letter {
   text-transform: capitalize;
 }
 
-.WeatherApp {
-  position: relative;
-  max-width: 500px;
-  padding: 12px;
-  margin: 10px auto;
-  background-color: #e0eff3;
-  border: #155967 solid 1px;
-  border-radius: 20px;
-}
-
 .Sun-icon {
-  height: 70px;
-  width: 70px;
+  height: 100px;
+  width: 100px;
   position: relative;
   top: -20px;
   right: -10px;
 }
-.Other-properties {
-  position: relative;
-  right: -80px;
-}
+
 .search-weather {
   display: inline-block;
   max-width: 400px;
   margin-bottom: 20px;
   margin-top: 10px;
   left: 200px;
+}
+.col-3 btn btn-warning w-100 {
+  display: block;
+  position: relative;
+  right: 30px;
 }
 .weather-temperature {
   display: block;
@@ -101,20 +116,21 @@ li::first-letter {
   margin: 0px 10px auto;
 }
 
-i {
-  color: #155967;
-}
 .five-Days-forecast {
-  margin-top: 20px;
+  margin-top: 10px;
   font-weight: 800;
   display: block;
   text-align: center;
-  font-size: 15px;
-  line-height: 1;
   color: #155967;
+  left: -10px;
+  padding: 0 auto;
+  line-height: 1;
 }
 .five-Days-forecast-date {
   font-size: 18px;
+  display: block;
+  text-align: center;
+  opacity: 0.8;
 }
 .five-Days-forecast-temperatures {
   font-size: 16px;
@@ -131,5 +147,5 @@ i {
   font-family: "Courier New", Courier, monospace;
   opacity: 0.9;
   max-width: 500px;
-  margin: 0 auto;
+  margin: 20px auto;
 }

@@ -3,7 +3,10 @@
   <head>
     <title>SC Home work week2</title>
     <meta charset="UTF-8" />
-    <script src="https://kit.fontawesome.com/9bce74786f.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/9bce74786f.js"
+      crossorigin="anonymous"
+    ></script>
     <meta name="viewport" content="width=device-width" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -17,101 +20,96 @@
   <body>
     <div class="container">
       <div class="WeatherApp">
-   <form class="search-weather"
-    id="search-form">
-  
-    <div class="row">
-    <div class="col-6">
-    <input 
-        type="search"
-        id="search-input"
-        class="form-control w-100" 
-        placeholder="Type a city..."
-        autofocus="on"
-        autocomplete="off"/>
-
-    </div>
-    <div class="col-3">
-    <input 
-       type="submit"
-       value="Search"
-       class="btn btn-warning"/>
-    </div>
-    <div class="col-3">
-    <button class="btn btn-primary w-100" id="current-location-button">
-                Current
-    </button>
-   </div>
-  </div>
-  </form>
-      <h1 id="city">
-        Klaipėda, Lithuania
-        
-      </h1>
-    <ul class="date">
-        <li id="currentDate">
-          Thursday 19:00
-        </li>
-        <li id="weather-description">
-          Sunny
-        </li>
-    </ul> 
-      <div class="row">
-        <div class ="col-6">
-        <div class="clearfix weather-temperature">
-            <strong class="degreesDay" id="DayTemperature">7 </strong>
-            <small class="degreesNight" id="NightTemperature"> 4 </small>
-            <span class="units">
-            <a href="?" id="celcius-link" class="active">°C  </a> |  
-            <a href="?" id="fahrenheit-link">°F</a></span>
-          <img src="pictures/sun.png"
-          alt="Sun icon"
-          class="Sun-icon"
-          id="weather-icon"
-          />
-        </div>
-         </div>
-        <div class ="col-6">
-            <ul class="Other-properties">
-              <li>
-                Wind:  <span id="wind">9 </span> Km/H
-              </li>
-              <li>
-                Humidity:   <span id="Humidity">39</span>%
-              </li>
-              <li>
-                Real feel:   <span id="real-feel">-1</span>°C
-              </li>
-            </ul>
-        </div>
-      </div>
-      <div class="five-Days-forecast" id="forecast">
-      <div class="row">
-          <div class="col-2">
-            <div class="five-Days-forecast-date">Fri</div>
-              <img 
-              src="http://openweathermap.org/img/wn/02d@2x.png"
-              alt=""
-              width="42"
-              class="fa-bounce"
+        <form class="search-weather" id="search-form">
+          <div class="row">
+            <div class="col-6">
+              <input
+                type="search"
+                id="search-input"
+                class="form-control w-400"
+                placeholder="Type a city..."
+                autofocus="on"
+                autocomplete="off"
               />
-            
-            <div class="five-Days-forecast-temperatures">
-              <span class="Forecast-day-temperature-max">6°</span>
-              <span class="Forecast-night-temperature-min">4°</span> C
+            </div>
+            <div class="col-3">
+              <input
+                type="submit"
+                value="Search"
+                class="btn btn-warning w-100"
+              />
+            </div>
+            <div class="col-3">
+              <button
+                class="btn btn-primary w-100"
+                id="current-location-button"
+              >
+                Current
+              </button>
             </div>
           </div>
+        </form>
+        <h1 id="city">Klaipėda, Lithuania</h1>
+        <ul class="date">
+          <li id="currentDate">Thursday 19:00</li>
+          <li id="weather-description">Sunny</li>
+        </ul>
+        <div class="row">
+          <div class="col-6">
+            <div class="clearfix weather-temperature">
+              <strong class="degreesDay" id="DayTemperature">7 </strong>
+              <small class="degreesNight" id="NightTemperature"> 4 </small>
+              <span class="units">
+                <a href="?" id="celcius-link" class="active">°C </a> |
+                <a href="?" id="fahrenheit-link">°F</a></span
+              >
+              <img
+                src="pictures/sun.png"
+                alt="Sun icon"
+                class="Sun-icon"
+                id="weather-icon"
+              />
+            </div>
+          </div>
+          <div class="col-6">
+            <ul class="Other-properties">
+              <li>Wind: <span id="wind">9 </span> Km/H</li>
+              <li>Humidity: <span id="Humidity">39</span>%</li>
+              <li>Real feel: <span id="real-feel">-1</span>°C</li>
+            </ul>
           </div>
         </div>
-        <small class="gitHub-link">
-          This project was coded by Alina - Marija Lapčiuk  and is  
-          <a href="https://github.com/Mariooona/weather-app-project" target="_blank">open-sourced on gitHub
-          </a> and <a href="https://relaxed-puffpuff-cda038.netlify.app/" target="_blank">
-             hosted on Netlify
-          </a>
-        </small>
-    <script
-        src="src/index.js">
-     </script>
+        <div class="five-Days-forecast" id="forecast">
+          <div class="row">
+            <div class="col-2">
+              <div class="five-Days-forecast-date">Fri</div>
+              <img
+                class="fa-bounce"
+                src="http://openweathermap.org/img/wn/02d@2x.png"
+                alt=""
+                width="42"
+              />
+
+              <div class="five-Days-forecast-temperatures">
+                <span class="Forecast-day-temperature-max">6°</span>
+                <span class="Forecast-night-temperature-min">4°</span> C
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <small class="gitHub-link">
+      This project was coded by Alina - Marija Lapčiuk and is
+      <a href="https://github.com/Mariooona/weather-app-project" target="_blank"
+        >open-sourced on gitHub
+      </a>
+      and
+      <a href="https://relaxed-puffpuff-cda038.netlify.app/" target="_blank">
+        hosted on Netlify
+      </a>
+    </small>
+
+    <script src="src/index.js"></script>
   </body>
 </html>
