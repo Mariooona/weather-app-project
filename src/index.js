@@ -41,6 +41,30 @@ function ShowCity(event) {
   searchCity(city);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+            <div class="five-Days-forecast-date">
+              <i class="fa-solid fa-cloud-sun fa-bounce"></i>
+            </div>
+            ${day}
+            <div class="five-Days-forecast-temperatures">
+              <span class="Forecast-day-temperature-max">6°</span>
+              <span class="Forecast-night-temperature-min">4°</span> C
+            </div>
+          </div>
+        </div>
+`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showTemperature(response) {
   console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
@@ -136,3 +160,4 @@ CelciusLinkDay.addEventListener("click", convertToCelciusDay);
 let CelciusLinkNight = document.querySelector("#celcius-link");
 CelciusLinkNight.addEventListener("click", convertToCelciusNight);
 searchCity("Vilnius");
+displayForecast();
